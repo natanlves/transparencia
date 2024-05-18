@@ -1,5 +1,5 @@
 <?php
-use app\Http\Controllers\LicitacoesController;
+use App\Http\Controllers\LicitacoesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
