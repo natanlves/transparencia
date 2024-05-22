@@ -17,19 +17,30 @@
     <body>
         <!--barra de navegação-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="#">Navbar</a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <!--navbar-->  
+          <div class="container-fluid">
+              <a class="navbar-brand" href="/home">Transparencia site</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
+              
+              <!--items do navbar-->
               <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link active" aria-current="page" href="/emendas">Emendas</a>
                   <a class="nav-link" href="#">Features</a>
                   <a class="nav-link" href="/licitacao">Licitações</a>
                 </div>
               </div>
+              <!--barra de pesquisa-->
+              
+              <form class="d-flex">
+                <input class="form-control me-2" type="Search" placeholder="Pesquise aqui" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+              </form>
             </div>
-          </nav>
+          
+        </nav>
     </body>
     

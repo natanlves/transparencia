@@ -10,29 +10,45 @@
         </head>        
         <body>
     
-           <!--nav bar-->
-           <nav class="navbar">
-                <div class="container-xxl">
-                    <a href="#intro" class="navbar-brand">
-                        <span class="fw-bold text-secondary">transparencia api</span>
-                    </a>
-
-                    <!--functions navbar-->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
-                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-
-
+                 <!--barra de navegação-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!--navbar-->  
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/home">Transparencia site</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" 
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <!--items do navbar-->
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link active" aria-current="page" href="/emendas">Emendas</a>
+                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="/licitacao">Licitações</a>
+                  </div>
                 </div>
-           </nav>
+                <!--barra de pesquisa-->
+                
+                <form class="d-flex">
+                  <input class="form-control me-2" type="Search" placeholder="Pesquise aqui" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Pesquisar</button>
+                </form>
+              </div>
+            
+          </nav>
+                    
+
+
+                
+           
            
 
            
             <!-- colunas de licitas-->
             <section id=intro>
                 <div class="container-lg my-5">
-                    <h2>responsive column widths</h2>
+                    <h2>licitações</h2>
                     <div class="row justify-content-center">
                         <div class="col-sm-4 col-lg-6">
                             <div class="p-5 bg-dark text-light">nome licitante</div>
