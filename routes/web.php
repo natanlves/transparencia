@@ -6,6 +6,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/Licitacao',[LicitacoesController::class,'index']);
+Route::get('/licitacao',[LicitacoesController::class,'index']);
 
 
