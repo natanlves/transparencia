@@ -3,7 +3,7 @@ use App\Http\Controllers\LicitacoesController;
 use App\Http\Controllers\EmendasController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('home');
 });
 
