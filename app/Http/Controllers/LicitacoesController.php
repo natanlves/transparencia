@@ -21,7 +21,7 @@ class LicitacoesController extends Controller
 
     // Define the custom headers
     $headers = [
-        'Authorization' => '"[{"key":"chave-api-dados","value":"759ce6b0a35cfe3c1e83bd66b21eb9f2"}]',
+        'Authorization' => 'Bearer 759ce6b0a35cfe3c1e83bd66b21eb9f2',
         'Accept'        => 'application/json',
     ];
 
