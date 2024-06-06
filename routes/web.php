@@ -7,7 +7,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/licitacao',[LicitacoesController::class,'index']);
+Route::get('/licitacao',[LicitacoesController::class,'sendRequest']);
 Route::get('/emendas',[EmendasController::class,'index']);
 
 

@@ -49,10 +49,11 @@
             <section id=intro>
                 <div class="container-lg my-5">
                     <h2>licitações</h2>
-                   <div class="row justify-center">
-                    <div class="dropdown show"> 
+                  <!-- <div class="row">-->
+                    
                            
                     <div class="col-sm-4 col-lg-6">
+                        <div class="dropdown show"> 
                         <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="p-5 bg-dark text-light">nome licitante</div>
                         </a>
@@ -63,18 +64,24 @@
                             <a class="dropdown-item" href="#">Something else here</a>
                           </div>
                           
-                        
-
-
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
                         </div>
 
                     </div>
-                        <div class="col-sm-4 col-lg-6">
+                        
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <div class="col-sm-4 col-lg-6">
                             <div class="p-5 bg-dark text-light">maior preço</div>
                         </div>
                         <div class="col-sm-4 col-lg-6">
