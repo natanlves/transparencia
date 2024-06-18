@@ -9,7 +9,7 @@
             <title>Transparencia</title>
         </head>        
         <body>
-    
+          <pre>{{ json_encode($Licitacao, JSON_PRETTY_PRINT) }}</pre>
                  <!--barra de navegação-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <!--navbar-->  
@@ -47,53 +47,50 @@
            
             <!-- colunas de licitas-->
             <section id=intro>
-                <div class="container-lg my-5">
-                    <h2>licitações</h2>
-                  <!-- <div class="row">-->
-                    
-                           
-                    <div class="col-sm-4 col-lg-6">
-                        <div class="dropdown show"> 
-                        <a class="btn btn-dark dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="p-5 bg-dark text-light">nome licitante</div>
-                        </a>
-                        
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                          </div>
-                          
-                        </div>
+              <div class="col-sm-4 col-lg-6">
+                <div class="p-5 bg-white"></div>
+            </div> 
+              <div class="col-sm-4 col-lg-6">
+                <div class="p-5 bg-dark text-light">licitas</div>
+            </div>
 
-                    </div>
-                        
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <div class="col-sm-4 col-lg-6">
-                            <div class="p-5 bg-dark text-light">maior preço</div>
-                        </div>
-                        <div class="col-sm-4 col-lg-6">
-                            <div class="p-5 bg-dark text-light">preço licitação</div>
-                        </div>
-                        <div class="col-sm-4 col-lg-6">
-                            <div class="p-5 bg-dark text-light">col 1</div>
-                        </div>
-                    </div>
+            <!-- data inicial-->
+            <form action="/licitacoes" method="GET">
 
-                </div>
-        </section>
+            <div class="col-sm-4 col-lg-6">
+              <div class="p-5 bg-white">Data de abertura inicial (DD/MM/AAAA) 
+                <input type="text" name="query1" placeholder="Enter your first search query"></div>
+            </div> 
+            
+            
+            <!-- data final-->
+
+            <div class="col-sm-4 col-lg-6">
+              <div class="p-5 bg-dark text-light">Data de abertura final (DD/MM/AAAA)
+                <input type="text" name="query2" placeholder="Enter your second search query"></div>
+            </div> 
+            
+
+            <!-- SIAFI -->
+
+            <div class="col-sm-4 col-lg-6">
+              <div class="p-5 bg-white">Código do Órgão (SIAFI) 
+                <input type="text" name="query3" placeholder="Enter your third search query" ></div>
+              
+            </div> 
+            
+
+            <button type="button" class="btn btn-warning">pesquisar</button>
+
+            </form>
+              @if(isset($licitacoes))
+              <h2>Results</h2>
+              <pre>{{ json_encode($licitacoes, JSON_PRETTY_PRINT) }}</pre>
+              @else
+              <p>No data available</p>
+              @endif
+
+            </section>
 
             
             
