@@ -10,4 +10,9 @@ Route::get('/', function () {
 Route::get('/licitacao',[LicitacoesController::class,'sendRequest']);
 Route::get('/emendas',[EmendasController::class,'index']);
 
+Route::get('/passagem', function(){
+    return view('passagemaerea');
+}
 
+
+);
