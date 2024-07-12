@@ -9,7 +9,7 @@
             <title>Transparencia</title>
         </head>        
         <body>
-          <pre>{{ json_encode($Licitacao, JSON_PRETTY_PRINT) }}</pre>
+          
                  <!--barra de navegação-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <!--navbar-->  
@@ -55,11 +55,11 @@
             </div>
 
             <!-- data inicial-->
-            <form action="/licitacoes" method="GET">
+            <form action="{{ route('licitacaores') }}" method="POST">
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-white">Data de abertura inicial (DD/MM/AAAA) 
-                <input type="text" name="query1" placeholder="Enter your first search query"></div>
+                <input type="text" name="query1" placeholder="primeiro parametro"></div>
             </div> 
             
             
@@ -67,7 +67,7 @@
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-dark text-light">Data de abertura final (DD/MM/AAAA)
-                <input type="text" name="query2" placeholder="Enter your second search query"></div>
+                <input type="text" name="query2" placeholder="segundo"></div>
             </div> 
             
 
@@ -75,21 +75,23 @@
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-white">Código do Órgão (SIAFI) 
-                <input type="text" name="query3" placeholder="Enter your third search query" ></div>
+                <input type="text" name="query3" placeholder="terceiro" ></div>
               
-            </div> 
+            </div>
+            <div class="col-sm-4 col-lg-6">
+              <div class="p-5 bg-white">numero de paginas
+                <input type="text" name="query4" placeholder="1" ></div>
+              
+            </div>  
             
+            
+            <button class="btn btn-primary" type="submit">Pesquisar</button>
 
-            <button type="button" class="btn btn-warning">pesquisar</button>
 
+
+            
             </form>
-              @if(isset($licitacoes))
-              <h2>Results</h2>
-              <pre>{{ json_encode($licitacoes, JSON_PRETTY_PRINT) }}</pre>
-              @else
-              <p>No data available</p>
-              @endif
-
+           
             </section>
 
             
@@ -100,3 +102,4 @@
         </body>
     </html>
 
+//eu nao conegui colocar o form action pra ativar a classe resultado no Controller, e portanto não consegui puxar a nova view do resultados para liciResSs
