@@ -14,12 +14,7 @@ class LicitacoesController extends Controller
         $query3 = $request->input('query3');
         $query4 = $request->input('query4');
         
-        session([
-            'query1' => $query1,
-            'query2' => $query2,
-            'query3' => $query3,
-            'query4' => $query4,
-        ]);
+        
         
         
         $client = new Client();
@@ -36,6 +31,7 @@ class LicitacoesController extends Controller
             'search1' => $query1,
             'search2' => $query2,
             'search3' => $query3,
+            'search4' => $query4,
         ];
 
         
@@ -54,6 +50,36 @@ class LicitacoesController extends Controller
         
 
     }
+    
+    
+    public function processar(Request $request){
+
+        $query1 = $request->input('query1');
+        $query2 = $request->input('query2');
+        $query3 = $request->input('query3');
+        $query4 = $request->input('query4');
+       
+        
+        session([
+            'query1' => $query1,
+            'query2' => $query2,
+            'query3' => $query3,
+            'query4' => $query4,
+        ]);
+
+        return redirect()->route('mostrar');
+    }
+    
+    
+    public function mostrar(){
+        $q1=session('query1');
+        $q2=session('query2');
+        $q3=session('query3');
+        $q4=session('query4');
+        return view('LicitacaoRes',compact('q1','q2','q3','q4'));
+    }
+    
+    
     public function resultado(Request $request){
          
         
@@ -95,7 +121,7 @@ class LicitacoesController extends Controller
              $Licitacao = json_decode($body, true);
  
              
-             return view('LicitacaoRes', compact('LicitacaoRes'));
+             return view('LicitacaoRes', compact('Licitacao'));
          } catch (\Exception $e) {
              
              return back()->withErrors(['message' => 'Erro ao obter as licitações.']);

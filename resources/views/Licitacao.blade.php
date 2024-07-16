@@ -24,7 +24,7 @@
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                   <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/emendas">Emendas</a>
-                    <a class="nav-link" href="/passagem">Passagem</a>
+                    <a class="nav-link" href="/licitacaores">res</a>
                     <a class="nav-link" href="/licitacao">Licitações</a>
                   </div>
                 </div>
@@ -55,7 +55,7 @@
             </div>
 
             <!-- data inicial-->
-            <form action="{{ route('licitacaores') }}" method="POST">
+            <form action="{{ route('processar') }}" method="GET">
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-white">Data de abertura inicial (DD/MM/AAAA) 

@@ -9,7 +9,7 @@
             <title>Transparencia</title>
         </head>        
         <body>
-          re>
+          
                  <!--barra de navegação-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <!--navbar-->  
@@ -40,9 +40,14 @@
 
 
 
+          <h1>aaaaa</h1>
+          <p>Nome: {{ $q1 }}</p>
+          <p>Nome: {{ $q2 }}</p>
+          <p>Nome: {{ $q3 }}</p>
+          <p>Nome: {{ $q4 }}</p>
 
 
-
-          
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </body>
     </html>
+//verificar se ta tudo certo com os inputs(tentar printar eles na pagina);
