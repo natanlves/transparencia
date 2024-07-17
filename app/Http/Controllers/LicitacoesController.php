@@ -66,8 +66,8 @@ class LicitacoesController extends Controller
             'query3' => $query3,
             'query4' => $query4,
         ]);
-
-        return redirect()->route('mostrar');
+        
+        return redirect()->route('resultado');
     }
     
     
@@ -118,10 +118,11 @@ class LicitacoesController extends Controller
              $body = $response->getBody()->getContents();
  
              
-             $Licitacao = json_decode($body, true);
+             $data = json_decode($body, true);
  
-             
-             return view('LicitacaoRes', compact('Licitacao'));
+            
+             //return response()->json($data);
+             return view('LicitacaoRes', compact('data'));
          } catch (\Exception $e) {
              
              return back()->withErrors(['message' => 'Erro ao obter as licitações.']);
@@ -130,3 +131,4 @@ class LicitacoesController extends Controller
     }
 }
 //preciso ligar o botao de licitacao blade chamar de alguma forma a classe resultado e dps na classe mesmo eu redireciono a view LicitacaoRes
+//dd($response->getStatusCode(), $response->getBody()->getContents()); use isso pra saber o retorno se é 200
