@@ -55,7 +55,7 @@
             </div>
 
             <!-- data inicial-->
-            <form action="{{ route('processar') }}" method="GET">
+            <form action="{{ route('request') }}" method="GET">
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-white">Data de abertura inicial (DD/MM/AAAA) 

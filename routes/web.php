@@ -7,9 +7,14 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/licitacao',[LicitacoesController::class,'sendRequest']);
-Route::get('/licitacaoproc',[LicitacoesController::class,'processar'])->name('processar');
+Route::get('/licitacao',[LicitacoesController::class,'index'])->name('licitacao');
+Route::get('/licitacaoproc',[LicitacoesController::class,'sendRequest'])->name('request');
 Route::get('/licitacaores',[LicitacoesController::class,'resultado'])->name('resultado');
+
+
+
+
+
 Route::get('/emendas',[EmendasController::class,'index']);
 
 Route::get('/passagem', function(){
