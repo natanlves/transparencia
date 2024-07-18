@@ -55,7 +55,7 @@
             </div>
 
             <!-- data inicial-->
-            <form action="{{ route('request') }}" method="GET">
+            <form action="{{ route('resultado') }}" method="GET">
 
             <div class="col-sm-4 col-lg-6">
               <div class="p-5 bg-white">Data de abertura inicial (DD/MM/AAAA) 
@@ -102,4 +102,3 @@
         </body>
     </html>
 
-//eu nao conegui colocar o form action pra ativar a classe resultado no Controller, e portanto não consegui puxar a nova view do resultados para liciResSs
