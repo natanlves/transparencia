@@ -37,17 +37,46 @@
               </div>
             
           </nav>
-          <!--Aqui começa o lance-->
-        
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasParlamentares" role="button">emendas parlamentares</a></div>
-        
-        
-        
-        <div>
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasCodigo" role="button">emendas procuradas por código</a></div>
-        </div>
-        
+          <!--codigo começa aqui-->
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-    
+          <form action="emendasParR">
+            <!--query1-->
+            <div class="p-5 bg-white">Código da Emenda 
+              <input type="text" name="query1" placeholder="primeiro parametro"></div>
+              
+              <!--query2-->
+            <div class="p-5 bg-white">Número da emenda
+              <input type="text" name="query2" placeholder="segundo parametro"></div>
+              
+              <!--query3-->
+            <div class="p-5 bg-white">Nome do Autor
+              <input type="text" name="query3" placeholder="terceiro parametro"></div>
+              
+              <!--query4-->
+            <div class="p-5 bg-white">Tipo de emenda 
+              <input type="text" name="query4" placeholder="quarto parametro"></div>
+              
+              <!--query5-->
+            <div class="p-5 bg-white">Ano 
+              <input type="text" name="query5" placeholder="quinto parametro"></div>
+              
+              <!--query6-->
+            <div class="p-5 bg-white">Código da função 
+              <input type="text" name="query6" placeholder="sexto parametro"></div>
+              
+              <!--query7-->
+            <div class="p-5 bg-white">Código da subfunção 
+              <input type="text" name="query7" placeholder="setimo parametro"></div>
+              
+              <!--query8-->
+            <div class="p-5 bg-white">Página consultada 
+              <input type="text" name="query8" placeholder="oitavo parametro"></div>
+
+
+          </form>
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+        </body>
+    </html>

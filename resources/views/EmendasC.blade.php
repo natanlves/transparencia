@@ -37,17 +37,26 @@
               </div>
             
           </nav>
-          <!--Aqui começa o lance-->
-        
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasParlamentares" role="button">emendas parlamentares</a></div>
-        
-        
-        
-        <div>
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasCodigo" role="button">emendas procuradas por código</a></div>
-        </div>
-        
+          <!--codigo começa aqui-->
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-    
+          <form action="{{route('emendasCodR')}}"method ="GET">
+            <!--query1-->
+            <div class="p-5 bg-white">Código da emenda
+              <input type="text" name="query1" placeholder="primeiro parametro"></div>
+              
+              <!--query2-->
+            <div class="p-5 bg-white">Página consultada
+              <input type="text" name="query2" placeholder="segundo parametro"></div>
+
+              <button class="btn btn-primary" type="submit">Pesquisar</button>
+          </form>
+
+
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        </body>
+    </html>
+    <!--202341490004
+    1
+    -->

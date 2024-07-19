@@ -37,17 +37,32 @@
               </div>
             
           </nav>
-          <!--Aqui começa o lance-->
-        
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasParlamentares" role="button">emendas parlamentares</a></div>
-        
-        
-        
-        <div>
-          <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasCodigo" role="button">emendas procuradas por código</a></div>
-        </div>
-        
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    </body>
-    
+
+          @foreach ($data as $item)
+          @if (isset($item['id']))
+              <?php
+              $id = $item['id'];
+              $licitacao = $item['licitacao'] ?? null;
+              $numero = $licitacao['numero'] ?? 'N/A';
+              $objeto = $licitacao['objeto'] ?? 'N/A';
+              $numeroProcesso = $licitacao['numeroProcesso'] ?? 'N/A';
+              $contatoResponsavel = $licitacao['contatoResponsavel'] ?? 'não definido';
+              ?>
+              <div>
+                  <h2>ID: {{ $id }}</h2>
+                  <p><strong>Número da Licitação:</strong> {{ $numero }}</p>
+                  <p><strong>Objeto:</strong> {{ $objeto }}</p>
+                  <p><strong>Número do Processo:</strong> {{ $numeroProcesso }}</p>
+                  <p><strong>Contato Responsável:</strong> {{ $contatoResponsavel }}</p>
+                  <hr>
+              </div>
+          @endif
+          @endforeach
+
+
+
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+        </body>
+    </html>

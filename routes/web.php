@@ -6,16 +6,19 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
-
+//licitacao
 Route::get('/licitacao',[LicitacoesController::class,'index'])->name('licitacao');
-
 Route::get('/licitacaores',[LicitacoesController::class,'resultado'])->name('resultado');
 
-
-
-
-
+//emendas
 Route::get('/emendas',[EmendasController::class,'index']);
+Route::get('/emendasParlamentares',[EmendasController::class,'emendasP'])->name('emendasP');
+Route::get('/emendasParlamentaresResultados',[EmendasController::class,'emendasParlamentaresR'])->name('emendasParR');
+Route::get('/emendasCodigo',[EmendasController::class,'emendasC'])->name('emendasC');
+Route::get('/emendasCodigoResultados',[EmendasController::class,'emendasCodigoR'])->name('emendasCodR');
+
+
+
 
 Route::get('/passagem', function(){
     return view('passagemaerea');
