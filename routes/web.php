@@ -20,9 +20,6 @@ Route::get('/emendasCodigoResultados',[EmendasController::class,'emendasCodigoR'
 
 
 
-Route::get('/passagem', function(){
-    return view('passagemaerea');
-}
 
 
-);
+
