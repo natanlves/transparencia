@@ -54,6 +54,9 @@ class LicitacoesController extends Controller
             
             $data = json_decode($body, true);
             
+             
+            
+   
             return view('LicitacaoRes',compact('data'));
 }
 }

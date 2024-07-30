@@ -38,11 +38,12 @@
             
           </nav>
 
-
-
+          @php
+          $temResultados = false;
+          $contagemPorCidade = [];
+          @endphp
+          
           @foreach ($data as $item)
-          
-          
               <?php
               $id = $item['id'];
               $licitacao = $item['licitacao'];
@@ -50,18 +51,43 @@
               $objeto = $licitacao['objeto'];
               $numeroProcesso = $licitacao['numeroProcesso'];
               $contatoResponsavel = $licitacao['contatoResponsavel'];
+              $municipio = $item['municipio'];
+              $uf = $municipio['uf'];
+              $sigla = $uf['nome'];
+              $nomeCidade = $municipio['nomeIBGE'];
               ?>
-              <div>
-                  <h2>ID: {{ $id }}</h2>
-                  <p><strong>Número da Licitação:</strong> {{ $numero }}</p>
-                  <p><strong>Objeto:</strong> {{ $objeto }}</p>
-                  <p><strong>Número do Processo:</strong> {{ $numeroProcesso }}</p>
-                  <p><strong>Contato Responsável:</strong> {{ $contatoResponsavel }}</p>
-                  <hr>
-              </div>
           
+              @if ($sigla === 'RR')
+                  @php
+                  $temResultados = true;
+                  if (!isset($contagemPorCidade[$nomeCidade])) {
+                      $contagemPorCidade[$nomeCidade] = 0;
+                  }
+                  $contagemPorCidade[$nomeCidade]++;
+                  @endphp
+                  <div>
+                      <h2>ID: {{ $id }}</h2>
+                      <p><strong>Número da Licitação:</strong> {{ $numero }}</p>
+                      <p><strong>Objeto:</strong> {{ $objeto }}</p>
+                      <p><strong>Número do Processo:</strong> {{ $numeroProcesso }}</p>
+                      <p><strong>Contato Responsável:</strong> {{ $contatoResponsavel }}</p>
+                      <p><strong>Cidade:</strong> {{ $nomeCidade }}</p>
+                      <p><strong>Estado:</strong> {{ $sigla }}</p>
+                      <hr>
+                  </div>
+              @endif
           @endforeach
-
+          
+          @if (!$temResultados)
+              <p>Nenhum resultado encontrado para Mato Grosso do Sul.</p>
+          @endif
+          
+          @if ($temResultados)
+              <h2>Contagem de Licitações por Cidade em Mato Grosso do Sul</h2>
+              @foreach ($contagemPorCidade as $cidade => $contagem)
+                  <p><strong>{{ $cidade }}:</strong> {{ $contagem }} licitação(s)</p>
+              @endforeach
+          @endif
           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </body>
     </html>
