@@ -2,6 +2,7 @@
 use App\Http\Controllers\LicitacoesController;
 use App\Http\Controllers\EmendasController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\historicoController;
 
 Route::get('/', function () {
     return view('home');
@@ -17,6 +18,11 @@ Route::get('/emendasParlamentaresResultados',[EmendasController::class,'emendasP
 Route::get('/emendasCodigo',[EmendasController::class,'emendasC'])->name('emendasC');
 Route::get('/emendasCodigoResultados',[EmendasController::class,'emendasCodigoR'])->name('emendasCodR');
 
+//historico
+
+
+
+Route::get('/search-history', [historicoController::class, 'mostrarHistorico'])->middleware('auth');
 
 
 
