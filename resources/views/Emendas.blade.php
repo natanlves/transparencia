@@ -35,7 +35,12 @@
                   <button class="btn btn-outline-success" type="submit">Pesquisar</button>
                 </form>
               </div>
-            
+            <!-- Botão de Logout -->
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-inline">
+              @csrf
+              <button class="btn btn-outline-danger" type="submit">Sair</button>
+          </form>
+      </div>
           </nav>
           <!--Aqui começa o lance-->
         
@@ -47,7 +52,7 @@
           <div class="p-5 bg-dark text-light"><a class="btn btn-primary" href="/emendasCodigo" role="button">emendas procuradas por código</a></div>
         </div>
         
-
+        
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
     

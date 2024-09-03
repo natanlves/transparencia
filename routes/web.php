@@ -3,11 +3,17 @@ use App\Http\Controllers\LicitacoesController;
 use App\Http\Controllers\EmendasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\historicoController;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('home');
-});
+
+
+Route::get('/', [AuthController::class, 'showHome'])->name('home');
+Route::get('/login', [AuthController::class, 'showHome'])->name('home');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 //licitacao
+
 Route::get('/licitacao',[LicitacoesController::class,'index'])->name('licitacao');
 Route::get('/licitacaores',[LicitacoesController::class,'resultado'])->name('resultado');
 
