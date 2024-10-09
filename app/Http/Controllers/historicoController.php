@@ -5,19 +5,31 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Historico;
 
 class historicoController extends Controller
 {
+    public function index(){
+        return view('/historico');
+    }
     // Método para exibir o histórico de pesquisas do usuário
-    public function mostrarHistorico()
-    {
-        // Obtém o usuário autenticado
-        $user = Auth::user();
-        
-        // Recupera o histórico de pesquisas desse usuário
-        $mostrarHistorico = $user->mostrarHistorico()->orderBy('created_at', 'desc')->get();
+  /*  public function armazenar(Request $request)
+{
+    $request->validate([
+        'consulta' => 'required|string|max:255',
+    ]);
 
-        // Retorna a view com o histórico de pesquisas
-        return view('historico', compact('mostrarHistorico'));
+    HistoricoPesquisa::create([
+        'consulta' => $request->consulta,
+        'usuario_id' => Auth::id(), // Associa a pesquisa ao usuário autenticado
+    ]);
+
+    return response()->json(['success' => true]);
+}*/
+
+public function listar()
+    {
+        $historicos = Historico::where('usuario_id', Auth::id())->get(); // Filtra pelo usuário autenticado
+        return view('historico', compact('historicos'));
     }
 }

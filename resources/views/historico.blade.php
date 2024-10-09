@@ -41,17 +41,35 @@
          
          
          
-         
-         
-          @section('content')
-          <h1>Histórico de Pesquisas</h1>
-          
-          <ul>
-              @foreach ($searchHistories as $history)
-                  <li>{{ $history->search_query }} - {{ $history->created_at->format('d/m/Y H:i') }}</li>
-              @endforeach
-          </ul>
-      @endsection
+          <div class="container">
+        <h1>Histórico de Pesquisas</h1>
+
+        @if($historicos->isEmpty())
+            <p>Nenhuma pesquisa encontrada.</p>
+        @else
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Consulta</th>
+                        <th>URL da Página</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($historicos as $historico)
+                        <tr>
+                            <td>{{ $historico->id }}</td>
+                            <td>{{ $historico->consulta }}</td>
+                            <td>{{ $historico->page_url }}</td>
+                            <td>{{ $historico->created_at->format('d/m/Y H:i') }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        @endif
+    </div>
+
          
          
          

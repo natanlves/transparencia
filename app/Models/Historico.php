@@ -7,12 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Historico extends Model
 {
-    protected $fillable = ['user_id', 'termo_pesquisa', 'page_url'];
+    protected $fillable = ['usuario_id', 'consulta', 'page_url'];
 
-    public function user()
+    public function usuario()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'usuario_id');
     }
-    
     use HasFactory;
 }

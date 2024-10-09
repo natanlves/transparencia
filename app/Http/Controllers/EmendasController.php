@@ -1,11 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Historico; 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
+
 
 class EmendasController extends Controller
 {
@@ -26,6 +28,18 @@ class EmendasController extends Controller
         $query6 = $request->input('query6');
         $query7 = $request->input('query7');
         $query8 = $request->input('query8');
+
+        // Captura a URL da página
+        $pageUrl = $request->fullUrl();
+
+         // Armazena a pesquisa no banco de dados
+         if ($query1 || $query2 || $query3 || $query4 || $query5 || $query6 || $query7 || $query8 && Auth::check()) {
+            Historico::create([
+                'usuario_id' => Auth::id(),
+                'consulta' => json_encode($request->all()), // Armazena todas as queries em formato JSON
+                'page_url' => $pageUrl,
+            ]);
+        }
 
         $client = new Client();
 
@@ -65,6 +79,19 @@ class EmendasController extends Controller
         
         $codigo = $request->input('query1');
         $query2 = $request->input('query2');
+
+        // Captura a URL da página
+        $pageUrl = $request->fullUrl();
+
+         // Armazena a pesquisa no banco de dados
+         if ($codigo || $query2 && Auth::check()) {
+            Historico::create([
+                'usuario_id' => Auth::id(),
+                'consulta' => json_encode($request->all()), // Armazena todas as queries em formato JSON
+                'page_url' => $pageUrl,
+            ]);
+        }
+        
         
         $client = new Client();
 

@@ -72,6 +72,7 @@
             <div class="p-5 bg-white">Página consultada 
               <input type="text" name="query8" placeholder="oitavo parametro"></div>
 
+              <button class="btn btn-primary" type="submit">Pesquisar</button>
 
           </form>
 

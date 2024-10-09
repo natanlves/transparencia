@@ -28,7 +28,16 @@ Route::get('/emendasCodigoResultados',[EmendasController::class,'emendasCodigoR'
 
 
 
-Route::get('/search-history', [historicoController::class, 'mostrarHistorico'])->middleware('auth');
+/*Route::middleware(['auth'])->group(function () {
+    Route::get('/historico', [historicoController::class, 'index'])->name('pesquisa.index');
+    Route::post('/pesquisa', [historicoController::class, 'armazenar'])->name('pesquisa.armazenar');
+    Route::get('/historicores', [historicoController::class, 'listar'])->name('historico.listar');
+});*/
+
+    
+    Route::get('/historico', [HistoricoController::class, 'listar'])->name('historico.listar');
+    Route::post('/pesquisa', [historicoController::class, 'armazenar'])->name('pesquisa.armazenar');
+    Route::get('/historicores', [historicoController::class, 'listar'])->name('historico.listar');
 
 
 

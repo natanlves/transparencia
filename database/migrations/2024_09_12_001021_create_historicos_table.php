@@ -13,10 +13,13 @@ return new class extends Migration
     {
         Schema::create('historicos', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('usuario_id')->constrained()->onDelete('cascade');
             $table->string('page_url');
-            $table->string('termo_pesquisa');
+            $table->string('consulta');
             $table->timestamps();
+
+
+            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
     
