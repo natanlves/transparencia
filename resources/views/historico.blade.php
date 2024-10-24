@@ -38,7 +38,7 @@
             
           </nav>
          
-         
+             
          
          
           <div class="container">
@@ -60,8 +60,15 @@
                     @foreach($historicos as $historico)
                         <tr>
                             <td>{{ $historico->id }}</td>
-                            <td>{{ $historico->consulta }}</td>
-                            <td>{{ $historico->page_url }}</td>
+                            <td>
+                            @php
+                                $consulta = json_decode($historico->consulta, true);
+                            @endphp
+                            @foreach($consulta as $key => $value)
+                                termo {{ $loop->iteration }}: {{ $value }}<br>
+                            @endforeach
+                        </td>
+                            <td><a href="{{ $historico->page_url }}">{{ $historico->page_url }}</a></td>
                             <td>{{ $historico->created_at->format('d/m/Y H:i') }}</td>
                         </tr>
                     @endforeach
